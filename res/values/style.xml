@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="mainArea">
+		<item name="android:orientation">vertical</item>
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:background">#84C348</item>
+		<item name="android:padding">8dip</item>
+	</style>
+	
+	<style name="buttonArea">
+		<item name="android:orientation">horizontal</item>
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">fill_parent</item>
+		<item name="android:background">#84C348</item>
+		<item name="android:padding">8dip</item>
+	</style>
+
+	<style name="inputText">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:focusable">true</item>
+	</style>
+
+	<style name="label">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">#FFFFFF</item>
+	</style>
+
+	<style name="msgArea">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">#FFFFFF</item>
+		<item name="android:background">#EA7521</item>
+	</style>
+	
+	<style name="button">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textColor">#000000</item>
+	</style>
+	
+	<style name="buttonCalc" parent="button">
+		<item name="android:textStyle">bold</item>
+		<item name="android:paddingLeft">28dip</item>
+		<item name="android:paddingRight">28dip</item>
+	</style>
+	
+	<style name="buttonClear" parent="button">
+		<item name="android:textColor">#000000</item>
+	</style>
+	
+	<style name="buttonAbout" parent="button">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">fill_parent</item>
+		<item name="android:src">@drawable/info</item>
+		<item name="android:background">#84C348</item>
+	</style>
+	
+</resources>

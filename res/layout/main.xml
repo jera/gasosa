@@ -3,51 +3,49 @@
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent" android:background="#84C348">
 
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		android:orientation="vertical" android:layout_width="fill_parent"
-		android:layout_height="wrap_content" android:background="#84C348"
-		android:padding="8dip">
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		style="@style/mainArea">
 
-		<TextView android:text="" android:id="@+id/visualizar"
-			android:layout_width="wrap_content" android:layout_height="wrap_content"
-			android:textStyle="bold" android:textColor="#FFFFFF"
-			android:background="#EA7521"></TextView>
+		<TextView android:id="@+id/visualizar"
+		 	style="@style/msgArea"/>
 
-		<TextView android:text="@string/label1" android:id="@+id/label1"
-			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:textStyle="bold" android:textColor="#FFFFFF"></TextView>
+		<TextView
+			android:text="@string/label.gasoline"
+			style="@style/label"/>
 
-		<EditText android:text="" android:id="@+id/gasolina_price"
-			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:inputType="numberDecimal"></EditText>
+		<EditText android:id="@+id/gasolina_price"
+			android:inputType="numberDecimal"
+			style="@style/inputText"/>
 
-		<TextView android:text="@string/label2" android:id="@+id/label2"
-			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:textStyle="bold" android:textColor="#FFFFFF"></TextView>
+		<TextView
+			android:text="@string/label.etanol"
+			style="@style/label"/>
 
-		<EditText android:text="" android:id="@+id/alcool_price"
-			android:layout_width="fill_parent" android:layout_height="wrap_content"
-			android:numeric="decimal" android:focusable="true"></EditText>
+		<EditText
+			android:id="@+id/alcool_price"
+			android:numeric="decimal"
+			style="@style/inputText"/>
 
 
-		<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			android:orientation="horizontal" android:layout_width="fill_parent"
-			android:layout_height="fill_parent" android:background="#84C348"
-			android:padding="8dip">
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			style="@style/buttonArea">
 
 
-			<Button android:text="@string/buttonlabel" android:id="@+id/primeiroBotao"
-				android:layout_width="wrap_content" android:layout_height="wrap_content"
-				android:textStyle="bold" android:textColor="#000000"
-				android:paddingLeft="28dip" android:paddingRight="28dip"></Button>
+			<Button
+				android:text="@string/buttonCalc"
+				android:id="@+id/primeiroBotao"
+				style="@style/buttonCalc"/>
 
-			<Button android:text="@string/button2label" android:id="@+id/segundoBotao"
-				android:layout_width="wrap_content" android:layout_height="wrap_content"
-				android:textColor="#000000"></Button>
+			<Button
+				android:text="@string/buttonClear"
+				android:id="@+id/segundoBotao"
+				style="@style/buttonClear"/>
 
-			<ImageButton android:id="@+id/imagebutton"
-				android:layout_width="fill_parent" android:layout_height="fill_parent"
-				android:src="@drawable/info" android:background="#84C348"/>
+			<ImageButton
+				android:id="@+id/imagebutton"
+				style="@style/buttonAbout"/>
 
 		</LinearLayout>
 

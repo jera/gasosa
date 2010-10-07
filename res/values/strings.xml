@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>    
-  <string name="label1">Valor da Gasolina (ex: 2.59)</string>
-    <string name="label2">Valor do Alcool</string>
-    <string name="buttonlabel">Calcular</string>
-    <string name="button2label">Limpar</string>
+  <string name="label.gasoline">Valor da Gasolina (ex: 2.59)</string>
+    <string name="label.etanol">Valor do Alcool</string>
+    <string name="buttonCalc">Calcular</string>
+    <string name="buttonClear">Limpar</string>
     <string name="desc_app">Qual ta valendo abastecer? </string>
     <string name="app_name">AlcoolxGasolina </string>
     <string name="about">AlcoolxGasolina\nJera Software Ágil\nwww.jera.com.br</string>

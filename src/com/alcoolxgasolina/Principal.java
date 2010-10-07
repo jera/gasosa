@@ -14,8 +14,6 @@ public class Principal extends Activity {
 
 	private EditText gasolinePriceText;
 	private EditText etanolPriceText;
-	private EditText gasolinePriceLabel;
-	private EditText etanolPriceLabel;
 	private TextView resultText;
 	private TextView resultLabel;
 
@@ -51,8 +49,6 @@ public class Principal extends Activity {
 		calcButton.setOnClickListener(this.calc);
 
 		Button clearButton = (Button) findViewById(R.id.segundoBotao);
-		gasolinePriceLabel = (EditText) findViewById(R.id.gasolina_price);
-		etanolPriceLabel = (EditText) findViewById(R.id.alcool_price);
 		resultLabel = (TextView) findViewById(R.id.visualizar);
 		clearButton.setOnClickListener(this.clear);
 
@@ -110,8 +106,8 @@ public class Principal extends Activity {
 
 			public void onClick(View v) {
 				resultLabel.setText(null);
-				gasolinePriceLabel.setText(null);
-				etanolPriceLabel.setText(null);
+				gasolinePriceText.setText(null);
+				etanolPriceText.setText(null);
 			}
 		};
 	}
