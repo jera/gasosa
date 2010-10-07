@@ -2,12 +2,6 @@ package com.alcoolxgasolina;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.InputType;
-import android.text.Spanned;
-import android.text.TextWatcher;
-import android.text.method.NumberKeyListener;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -73,7 +67,7 @@ public class Principal extends Activity {
 
 	public String evaluatePrice(double valor_final, double etanolPrice, double gasolinePrice) {
 		if (valor_final <= etanolPrice) {
-			return String.format("Para compensar o preço do Álcool deveria estar a: R$ %f", valor_final);
+			return String.format("Para compensar o preço do Álcool deveria estar a: R$ %.2f", valor_final);
 		} else {
 			return String.format("O preço do álcool ( R$ %.2f )  atingiu %.0f%% do valor da gasolina ( R$ %.2f), está valendo a pena! ",
 					etanolPrice, FACTOR, gasolinePrice);
@@ -89,12 +83,14 @@ public class Principal extends Activity {
 			public void onClick(View view) {
 
 				if (gasolinePriceText.length() <= 0) {
-					Toast.makeText(getApplicationContext(), "Eu preciso saber o preço da Gasolina :)", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), getResources().getString(R.string.gasoline_required), Toast.LENGTH_LONG).show();
+					resultText.setText(null);
 					return;
 				}
 
 				if (etanolPriceText.length() <= 0) {
-					Toast.makeText(getApplicationContext(), "Eu preciso saber o preço do Álcool :)", Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), getResources().getString(R.string.etanol_required), Toast.LENGTH_LONG).show();
+					resultText.setText(null);
 					return;
 				}
 

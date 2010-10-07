@@ -6,5 +6,7 @@
     <string name="button2label">Limpar</string>
     <string name="desc_app">Qual ta valendo abastecer? </string>
     <string name="app_name">AlcoolxGasolina </string>
-    <string name="about">AlcoolxGasolina\n Jera Software Ágil </string>
+    <string name="about">AlcoolxGasolina\nJera Software Ágil\nwww.jera.com.br</string>
+    <string name="etanol.required">Eu preciso saber o preço do Álcool :)</string>
+    <string name="gasoline.required">Eu preciso saber o preço do Álcool :)</string>
 </resources>

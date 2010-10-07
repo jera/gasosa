@@ -33,6 +33,8 @@ public final class R {
         public static final int button2label=0x7f040003;
         public static final int buttonlabel=0x7f040002;
         public static final int desc_app=0x7f040004;
+        public static final int etanol_required=0x7f040007;
+        public static final int gasoline_required=0x7f040008;
         public static final int label1=0x7f040000;
         public static final int label2=0x7f040001;
     }
