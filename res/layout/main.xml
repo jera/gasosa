@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent" android:background="#84C348">
+	android:layout_height="fill_parent" android:background="@drawable/background">
 
 	<LinearLayout
 		xmlns:android="http://schemas.android.com/apk/res/android"
 		style="@style/mainArea">
-
-		<TextView android:id="@+id/visualizar"
-		 	style="@style/msgArea"/>
 
 		<TextView
 			android:text="@string/label.gasoline"
@@ -43,12 +40,15 @@
 				android:id="@+id/segundoBotao"
 				style="@style/buttonClear"/>
 
-			<ImageButton
-				android:id="@+id/imagebutton"
-				style="@style/buttonAbout"/>
 
 		</LinearLayout>
-
+		<LinearLayout
+			style="@style/mainArea"
+			xmlns:android="http://schemas.android.com/apk/res/android">
+			<ImageView
+				android:id="@+id/result"
+				style="@style/resultImage"/>
+		</LinearLayout>
 	</LinearLayout>
 </LinearLayout>
 

@@ -1,25 +1,34 @@
 package com.alcoolxgasolina;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class Principal extends Activity {
-
+	
+	private static final String ETANOL = "etanol";
+	private static final String GASOLINE = "gasoline";
+	
 	private EditText gasolinePriceText;
 	private EditText etanolPriceText;
-	private TextView resultText;
-	private TextView resultLabel;
+	private ImageView result;
+	
+	private Button calcButton;
 
 	private final OnClickListener calc;
 	private final OnClickListener clear;
-	private final OnClickListener about;
+	
+	private InputMethodManager imm;
 
 	private final static double FACTOR = 70;
 
@@ -29,11 +38,6 @@ public class Principal extends Activity {
 		calc = calcHandler();
 		clear = clearHandler();
 
-		about = new OnClickListener() {
-			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(), getResources().getString(R.string.about), Toast.LENGTH_LONG).show();
-			}
-		};
 	}
 
 	@Override
@@ -41,19 +45,17 @@ public class Principal extends Activity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-
-		Button calcButton = (Button) findViewById(R.id.primeiroBotao);
+		
+		result = (ImageView) findViewById(R.id.result);
+		
+		calcButton = (Button) findViewById(R.id.primeiroBotao);
 		gasolinePriceText = (EditText) findViewById(R.id.gasolina_price);
 		etanolPriceText = (EditText) findViewById(R.id.alcool_price);
-		resultText = (TextView) findViewById(R.id.visualizar);
 		calcButton.setOnClickListener(this.calc);
 
 		Button clearButton = (Button) findViewById(R.id.segundoBotao);
-		resultLabel = (TextView) findViewById(R.id.visualizar);
 		clearButton.setOnClickListener(this.clear);
 
-		ImageButton aboutButton = (ImageButton) findViewById(R.id.imagebutton);
-		aboutButton.setOnClickListener(about);
 
 	}
 
@@ -63,10 +65,9 @@ public class Principal extends Activity {
 
 	public String evaluatePrice(double valor_final, double etanolPrice, double gasolinePrice) {
 		if (valor_final <= etanolPrice) {
-			return String.format("Para compensar o preço do Álcool deveria estar a: R$ %.2f", valor_final);
+			return GASOLINE;
 		} else {
-			return String.format("O preço do álcool ( R$ %.2f )  atingiu %.0f%% do valor da gasolina ( R$ %.2f), está valendo a pena! ",
-					etanolPrice, FACTOR, gasolinePrice);
+			return ETANOL;
 		}
 	}
 	
@@ -80,13 +81,11 @@ public class Principal extends Activity {
 
 				if (gasolinePriceText.length() <= 0) {
 					Toast.makeText(getApplicationContext(), getResources().getString(R.string.gasoline_required), Toast.LENGTH_LONG).show();
-					resultText.setText(null);
 					return;
 				}
 
 				if (etanolPriceText.length() <= 0) {
 					Toast.makeText(getApplicationContext(), getResources().getString(R.string.etanol_required), Toast.LENGTH_LONG).show();
-					resultText.setText(null);
 					return;
 				}
 
@@ -94,8 +93,20 @@ public class Principal extends Activity {
 				double etanolPrice = Double.parseDouble(etanolPriceText.getText().toString());
 
 				double valor_final = calculateFinalValue(gasolinePrice);
+				
+				String r = evaluatePrice(valor_final, etanolPrice, gasolinePrice);
+				if(r.equals(GASOLINE))
+					result.setImageDrawable(getResources().getDrawable(R.drawable.gas));
+				else
+					result.setImageDrawable(getResources().getDrawable(R.drawable.etanol));
+				
+				result.startAnimation(AnimationUtils.loadAnimation( Principal.this, R.anim.fade ));
+				result.setVisibility(View.VISIBLE);
+				
+				//oculta o teclado virtual do android
+				imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+				imm.hideSoftInputFromWindow(calcButton.getWindowToken(), 0);
 
-				resultText.setText(evaluatePrice(valor_final, etanolPrice, gasolinePrice));
 			}
 		};
 
@@ -105,7 +116,6 @@ public class Principal extends Activity {
 		return new View.OnClickListener() {
 
 			public void onClick(View v) {
-				resultLabel.setText(null);
 				gasolinePriceText.setText(null);
 				etanolPriceText.setText(null);
 			}
