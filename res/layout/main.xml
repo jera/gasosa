@@ -3,45 +3,49 @@
 	android:orientation="vertical" android:layout_width="fill_parent"
 	android:layout_height="fill_parent" android:background="@drawable/background">
 
-	<LinearLayout
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		style="@style/mainArea">
-
-		<TextView
-			android:text="@string/label.gasoline"
-			style="@style/label"/>
-
-		<EditText android:id="@+id/gasolina_price"
-			android:inputType="numberDecimal"
-			style="@style/inputText"/>
-
-		<TextView
-			android:text="@string/label.etanol"
-			style="@style/label"/>
-
-		<EditText
-			android:id="@+id/alcool_price"
-			android:numeric="decimal"
-			style="@style/inputText"/>
-
 
 		<LinearLayout
 			xmlns:android="http://schemas.android.com/apk/res/android"
-			style="@style/buttonArea">
-
-
-			<Button
+			style="@style/topArea">
+			
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			style="@style/hArea">
+			
+		 	<TextView
+		 	 	android:text="@string/label.etanol"
+		 	 	style="@style/labelEtanol"
+		 	 />
+		 	 
+		 	<TextView 
+		 		android:text="@string/label.gasoline"
+		 		style="@style/labelGas"
+		 	 />
+		 	 
+		</LinearLayout>
+		
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			style="@style/hArea">
+		
+			<EditText
+				android:id="@+id/alcool_price"
+				android:inputType="numberDecimal"
+				style="@style/inputEtanol"/>
+		
+			<EditText android:id="@+id/gasolina_price"
+				android:inputType="numberDecimal"
+				style="@style/inputGas"/>
+		
+		</LinearLayout>
+		 
+			<Button 
 				android:text="@string/buttonCalc"
 				android:id="@+id/primeiroBotao"
 				style="@style/buttonCalc"/>
-
-			<Button
-				android:text="@string/buttonClear"
-				android:id="@+id/segundoBotao"
-				style="@style/buttonClear"/>
-
-
+		 
 		</LinearLayout>
+		
 		<LinearLayout
 			style="@style/mainArea"
 			xmlns:android="http://schemas.android.com/apk/res/android">
@@ -49,7 +53,7 @@
 				android:id="@+id/result"
 				style="@style/resultImage"/>
 		</LinearLayout>
-	</LinearLayout>
+		
 </LinearLayout>
 
 

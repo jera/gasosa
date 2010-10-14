@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>    
-  <string name="label.gasoline">Valor da Gasolina (ex: 2.59)</string>
-    <string name="label.etanol">Valor do Alcool</string>
+  <string name="label.gasoline">Gasolina</string>
+    <string name="label.etanol">Etanol</string>
     <string name="buttonCalc">Calcular</string>
     <string name="buttonClear">Limpar</string>
     <string name="desc_app">Qual ta valendo abastecer? </string>
