@@ -11,29 +11,16 @@
 		<LinearLayout
 			xmlns:android="http://schemas.android.com/apk/res/android"
 			style="@style/hArea">
-			
-		 	<TextView
-		 	 	android:text="@string/label.etanol"
-		 	 	style="@style/labelEtanol"
-		 	 />
-		 	 
-		 	<TextView 
-		 		android:text="@string/label.gasoline"
-		 		style="@style/labelGas"
-		 	 />
-		 	 
-		</LinearLayout>
-		
-		<LinearLayout
-			xmlns:android="http://schemas.android.com/apk/res/android"
-			style="@style/hArea">
 		
 			<EditText
+				android:hint="Valor"
 				android:id="@+id/alcool_price"
 				android:inputType="numberDecimal"
 				style="@style/inputEtanol"/>
 		
-			<EditText android:id="@+id/gasolina_price"
+			<EditText
+				android:hint="Valor"
+				android:id="@+id/gasolina_price"
 				android:inputType="numberDecimal"
 				style="@style/inputGas"/>
 		
