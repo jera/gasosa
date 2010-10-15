@@ -16,31 +16,34 @@ public final class R {
     public static final class drawable {
         public static final int background=0x7f020000;
         public static final int buttonbg=0x7f020001;
-        public static final int etanol=0x7f020002;
-        public static final int gas=0x7f020003;
-        public static final int info=0x7f020004;
-        public static final int input=0x7f020005;
-        public static final int top=0x7f020006;
+        public static final int buttonbg2=0x7f020002;
+        public static final int calc_button=0x7f020003;
+        public static final int etanol=0x7f020004;
+        public static final int gas=0x7f020005;
+        public static final int icon_h=0x7f020006;
+        public static final int icon_l=0x7f020007;
+        public static final int icon_m=0x7f020008;
+        public static final int top=0x7f020009;
+        public static final int valor=0x7f02000a;
     }
     public static final class id {
         public static final int alcool_price=0x7f070000;
         public static final int gasolina_price=0x7f070001;
         public static final int primeiroBotao=0x7f070002;
-        public static final int result=0x7f070003;
+        public static final int resultEtanol=0x7f070004;
+        public static final int resultGas=0x7f070005;
+        public static final int resultImage=0x7f070003;
     }
     public static final class layout {
         public static final int main=0x7f030000;
     }
     public static final class string {
-        public static final int about=0x7f050006;
-        public static final int app_name=0x7f050005;
-        public static final int buttonCalc=0x7f050002;
-        public static final int buttonClear=0x7f050003;
-        public static final int desc_app=0x7f050004;
-        public static final int etanol_required=0x7f050007;
-        public static final int gasoline_required=0x7f050008;
-        public static final int label_etanol=0x7f050001;
-        public static final int label_gasoline=0x7f050000;
+        public static final int app_name=0x7f050003;
+        public static final int buttonCalc=0x7f050000;
+        public static final int desc_app=0x7f050002;
+        public static final int etanol_required=0x7f050004;
+        public static final int gasoline_required=0x7f050005;
+        public static final int result=0x7f050001;
     }
     public static final class style {
         public static final int button=0x7f06000a;
@@ -55,7 +58,10 @@ public final class R {
         public static final int labelGas=0x7f060008;
         public static final int mainArea=0x7f060000;
         public static final int msgArea=0x7f060009;
+        public static final int resultEtanol=0x7f060010;
+        public static final int resultGas=0x7f06000f;
         public static final int resultImage=0x7f06000d;
+        public static final int resultText=0x7f06000e;
         public static final int topArea=0x7f060001;
     }
 }

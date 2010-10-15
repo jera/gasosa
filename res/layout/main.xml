@@ -27,21 +27,30 @@
 		</LinearLayout>
 		 
 			<Button 
-				
-				android:text="@string/buttonCalc"
 				android:id="@+id/primeiroBotao"
 				style="@style/buttonCalc"
-				android:background="@drawable/buttonbg"/>
+				android:background="@drawable/calc_button"/>
 		 
 		</LinearLayout>
 		
-		<LinearLayout
+		<RelativeLayout
 			style="@style/mainArea"
 			xmlns:android="http://schemas.android.com/apk/res/android">
 			<ImageView
-				android:id="@+id/result"
+				android:id="@+id/resultImage"
 				style="@style/resultImage"/>
-		</LinearLayout>
+			
+			<TextView
+				android:id="@+id/resultEtanol"
+				style="@style/resultEtanol"
+				android:text="@string/result" />
+				
+			<TextView
+				android:id="@+id/resultGas"
+				style="@style/resultGas"
+				android:text="@string/result" />
+				
+		</RelativeLayout>
 		
 </LinearLayout>
 

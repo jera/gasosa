@@ -24,39 +24,38 @@
 	<style name="inputText">
 		<item name="android:width">130dip</item>
 		<item name="android:layout_width">fill_parent</item>
-		<item name="android:layout_height">wrap_content</item>
-		<item name="android:height">10px</item>
-		<item name="android:layout_marginTop">85px</item>
+		<item name="android:layout_height">46dp</item>
+		<item name="android:layout_marginTop">85dp</item>
 		<item name="android:focusable">true</item>
-		<item name="android:padding">0px</item>
-		<item name="android:drawablePadding">2px</item>
-		<item name="android:drawableLeft">@drawable/input</item>
+		<item name="android:paddingLeft">0dp</item>
+		<item name="android:drawablePadding">2dp</item>
+		<item name="android:drawableLeft">@drawable/valor</item>
 	</style>
 	
 	<style name="inputEtanol" parent="inputText">
-		<item name="android:layout_marginLeft">20px</item>
+		<item name="android:layout_marginLeft">20dp</item>
 	</style>
 	
 	<style name="inputGas" parent="inputText">
-		<item name="android:layout_marginLeft">20px</item>
+		<item name="android:layout_marginLeft">20dp</item>
 	</style>
 	
 
 	<style name="label">
 	<item name="android:layout_width">fill_parent</item>
 		<item name="android:layout_height">fill_parent</item>
-		<item name="android:layout_marginTop">40px</item>
+		<item name="android:layout_marginTop">40dp</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:textColor">#FFFFFF</item>
 		<item name="android:textSize">24sp</item>
 	</style>
 	
 	<style name="labelEtanol" parent="label" >
-		<item name="android:layout_marginLeft">40px</item>
+		<item name="android:layout_marginLeft">40dp</item>
 	</style>
 	
 	<style name="labelGas"  parent="label">
-		<item name="android:layout_marginLeft">80px</item>
+		<item name="android:layout_marginLeft">80dp</item>
 	</style>
 	
 	<style name="msgArea">
@@ -74,9 +73,9 @@
 
 	<style name="buttonCalc" parent="button">
 		<item name="android:textStyle">bold</item>
-		<item name="android:layout_marginTop">19px</item>
-		<item name="android:layout_marginLeft">15px</item>
-		<item name="android:layout_marginRight">14px</item>
+		<item name="android:layout_marginTop">20dp</item>
+		<item name="android:layout_marginLeft">15dp</item>
+		<item name="android:layout_marginRight">14dp</item>
 		<item name="android:textColor">#FFFFFF</item>
 		<item name="android:gravity">center_vertical|center_horizontal</item>
 		<item name="android:layout_gravity">center_vertical|center_horizontal|center</item>
@@ -88,8 +87,26 @@
 
 	<style name="resultImage">
 		<item name="android:layout_width">fill_parent</item>
-		<item name="android:layout_height">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginTop">13dp</item>
 		<item name="android:visibility">invisible</item>
+	</style>
+	
+	<style name="resultText">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginTop">95dp</item>
+		<item name="android:textSize">12sp</item>
+		<item name="android:textColor">#FFFFFF</item>
+		<item name="android:visibility">invisible</item>
+	</style>
+	
+	<style name="resultGas" parent="resultText">
+		<item name="android:layout_marginLeft">33dp</item>
+	</style>
+	
+	<style name="resultEtanol" parent="resultText">
+		<item name="android:layout_marginLeft">102dp</item>
 	</style>
 
 </resources>

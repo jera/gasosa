@@ -10,6 +10,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Principal extends Activity {
@@ -19,7 +20,9 @@ public class Principal extends Activity {
 	
 	private EditText gasolinePriceText;
 	private EditText etanolPriceText;
-	private ImageView result;
+	private ImageView resultImage;
+	private TextView resultGas;
+	private TextView resultEtanol;
 	
 	private Button calcButton;
 
@@ -31,9 +34,7 @@ public class Principal extends Activity {
 
 	// inicialização estática dos handlers de eventos
 	{
-		
 		calc = calcHandler();
-
 	}
 
 	@Override
@@ -42,11 +43,14 @@ public class Principal extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		
-		result = (ImageView) findViewById(R.id.result);
+		resultImage = (ImageView) findViewById(R.id.resultImage);
 		
 		calcButton = (Button) findViewById(R.id.primeiroBotao);
 		gasolinePriceText = (EditText) findViewById(R.id.gasolina_price);
 		etanolPriceText = (EditText) findViewById(R.id.alcool_price);
+		resultGas = (TextView) findViewById(R.id.resultGas);
+		resultEtanol = (TextView) findViewById(R.id.resultEtanol);
+		
 		calcButton.setOnClickListener(this.calc);
 
 
@@ -89,13 +93,28 @@ public class Principal extends Activity {
 				double valor_final = calculateFinalValue(gasolinePrice);
 				
 				String r = evaluatePrice(valor_final, etanolPrice, gasolinePrice);
-				if(r.equals(GASOLINE))
-					result.setImageDrawable(getResources().getDrawable(R.drawable.gas));
-				else
-					result.setImageDrawable(getResources().getDrawable(R.drawable.etanol));
+				if(r.equals(GASOLINE)){
+					resultImage.setImageDrawable(getResources().getDrawable(R.drawable.gas));
+					resultEtanol.setVisibility(View.INVISIBLE);
+					resultGas.setVisibility(View.VISIBLE);
+					
+					String format = getResources().getString(R.string.result);
+					resultGas.setText(String.format(format, (etanolPrice/gasolinePrice)*100 ));
+					resultGas.startAnimation(AnimationUtils.loadAnimation( Principal.this, R.anim.fade ));
+				}
+				else{
+					resultImage.setImageDrawable(getResources().getDrawable(R.drawable.etanol));
+					resultEtanol.setVisibility(View.VISIBLE);
+					resultGas.setVisibility(View.INVISIBLE);
+					
+					
+					String format = getResources().getString(R.string.result);
+					resultEtanol.setText(String.format(format, (etanolPrice/gasolinePrice)*100));
+					resultEtanol.startAnimation(AnimationUtils.loadAnimation( Principal.this, R.anim.fade ));
+				}
 				
-				result.startAnimation(AnimationUtils.loadAnimation( Principal.this, R.anim.fade ));
-				result.setVisibility(View.VISIBLE);
+				resultImage.startAnimation(AnimationUtils.loadAnimation( Principal.this, R.anim.fade ));
+				resultImage.setVisibility(View.VISIBLE);
 				
 				//oculta o teclado virtual do android
 				imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
