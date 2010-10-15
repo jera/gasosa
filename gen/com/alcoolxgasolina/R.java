@@ -19,7 +19,8 @@ public final class R {
         public static final int etanol=0x7f020002;
         public static final int gas=0x7f020003;
         public static final int info=0x7f020004;
-        public static final int top=0x7f020005;
+        public static final int input=0x7f020005;
+        public static final int top=0x7f020006;
     }
     public static final class id {
         public static final int alcool_price=0x7f070000;

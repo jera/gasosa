@@ -27,6 +27,7 @@
 		</LinearLayout>
 		 
 			<Button 
+				
 				android:text="@string/buttonCalc"
 				android:id="@+id/primeiroBotao"
 				style="@style/buttonCalc"

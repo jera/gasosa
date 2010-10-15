@@ -22,22 +22,23 @@
 	</style>
 	
 	<style name="inputText">
-		<item name="android:width">80dip</item>
+		<item name="android:width">130dip</item>
 		<item name="android:layout_width">fill_parent</item>
 		<item name="android:layout_height">wrap_content</item>
+		<item name="android:height">10px</item>
 		<item name="android:layout_marginTop">85px</item>
 		<item name="android:focusable">true</item>
+		<item name="android:padding">0px</item>
+		<item name="android:drawablePadding">2px</item>
+		<item name="android:drawableLeft">@drawable/input</item>
 	</style>
 	
 	<style name="inputEtanol" parent="inputText">
-		<item name="android:layout_marginLeft">40px</item>
-		<item name="android:layout_marginRight">40px</item>
-		<item name="android:padding">10px</item>
+		<item name="android:layout_marginLeft">20px</item>
 	</style>
 	
 	<style name="inputGas" parent="inputText">
-		<item name="android:layout_marginLeft">40px</item>
-		<item name="android:layout_marginRight">40px</item>
+		<item name="android:layout_marginLeft">20px</item>
 	</style>
 	
 
