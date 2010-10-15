@@ -72,9 +72,8 @@
 	</style>
 
 	<style name="buttonCalc" parent="button">
-		<item name="android:height">8dip</item>
 		<item name="android:textStyle">bold</item>
-		<item name="android:layout_marginTop">15px</item>
+		<item name="android:layout_marginTop">19px</item>
 		<item name="android:layout_marginLeft">15px</item>
 		<item name="android:layout_marginRight">14px</item>
 		<item name="android:textColor">#FFFFFF</item>

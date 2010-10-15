@@ -24,7 +24,6 @@ public class Principal extends Activity {
 	private Button calcButton;
 
 	private final OnClickListener calc;
-	private final OnClickListener clear;
 	
 	private InputMethodManager imm;
 
@@ -34,7 +33,6 @@ public class Principal extends Activity {
 	{
 		
 		calc = calcHandler();
-		clear = clearHandler();
 
 	}
 
