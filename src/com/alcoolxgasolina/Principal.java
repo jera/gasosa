@@ -2,6 +2,8 @@ package com.alcoolxgasolina;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,6 +25,7 @@ public class Principal extends Activity {
 	private ImageView resultImage;
 	private TextView resultGas;
 	private TextView resultEtanol;
+	private ImageView link;
 	
 	private Button calcButton;
 
@@ -50,10 +53,12 @@ public class Principal extends Activity {
 		etanolPriceText = (EditText) findViewById(R.id.alcool_price);
 		resultGas = (TextView) findViewById(R.id.resultGas);
 		resultEtanol = (TextView) findViewById(R.id.resultEtanol);
-		
+		link = (ImageView) findViewById(R.id.link);
 		calcButton.setOnClickListener(this.calc);
-
-
+		
+		link.setOnClickListener(this.openLink());
+		
+		
 
 	}
 
@@ -69,7 +74,16 @@ public class Principal extends Activity {
 		}
 	}
 	
-
+	private OnClickListener openLink(){
+		return new OnClickListener() {
+			
+			public void onClick(View v) {
+				Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("http://www.m.jera.com.br") );
+				startActivity(intent);
+				
+			}
+		};
+	}
 		
 	private OnClickListener calcHandler() {
 

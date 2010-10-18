@@ -20,15 +20,15 @@ public final class R {
         public static final int calc_button=0x7f020003;
         public static final int etanol=0x7f020004;
         public static final int gas=0x7f020005;
-        public static final int icon_h=0x7f020006;
-        public static final int icon_l=0x7f020007;
-        public static final int icon_m=0x7f020008;
-        public static final int top=0x7f020009;
-        public static final int valor=0x7f02000a;
+        public static final int icon=0x7f020006;
+        public static final int logo=0x7f020007;
+        public static final int top=0x7f020008;
+        public static final int valor=0x7f020009;
     }
     public static final class id {
         public static final int alcool_price=0x7f070000;
         public static final int gasolina_price=0x7f070001;
+        public static final int link=0x7f070006;
         public static final int primeiroBotao=0x7f070002;
         public static final int resultEtanol=0x7f070004;
         public static final int resultGas=0x7f070005;
