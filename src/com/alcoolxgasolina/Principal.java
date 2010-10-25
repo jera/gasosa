@@ -55,7 +55,6 @@ public class Principal extends Activity {
 		resultEtanol = (TextView) findViewById(R.id.resultEtanol);
 		link = (ImageView) findViewById(R.id.link);
 		calcButton.setOnClickListener(this.calc);
-		
 		link.setOnClickListener(this.openLink());
 		
 		
@@ -84,25 +83,41 @@ public class Principal extends Activity {
 			}
 		};
 	}
-		
+	
+	
+	private double getEditTextValue(EditText edit){
+		if(edit.getText().toString().length() <= 0){
+			return 0;
+		}
+		else{
+			try{
+				return Double.parseDouble(edit.getText().toString());
+			}
+			catch(NumberFormatException e){
+				return 0;
+			}
+		}
+	}
+	
 	private OnClickListener calcHandler() {
 
 		return new OnClickListener() {
 
 			public void onClick(View view) {
-
-				if (gasolinePriceText.length() <= 0) {
-					Toast.makeText(getApplicationContext(), getResources().getString(R.string.gasoline_required), Toast.LENGTH_LONG).show();
+				
+				double gasolinePrice = getEditTextValue(gasolinePriceText);
+				double etanolPrice = getEditTextValue(etanolPriceText);
+				
+				if (etanolPrice <= 0) {
+					Toast.makeText(getApplicationContext(), getResources().getString(R.string.etanol_required), Toast.LENGTH_SHORT).show();
+					return;
+				}
+				
+				if (gasolinePrice  <= 0) {
+					Toast.makeText(getApplicationContext(), getResources().getString(R.string.gasoline_required), Toast.LENGTH_SHORT).show();
 					return;
 				}
 
-				if (etanolPriceText.length() <= 0) {
-					Toast.makeText(getApplicationContext(), getResources().getString(R.string.etanol_required), Toast.LENGTH_LONG).show();
-					return;
-				}
-
-				double gasolinePrice = Double.parseDouble(gasolinePriceText.getText().toString());
-				double etanolPrice = Double.parseDouble(etanolPriceText.getText().toString());
 
 				double valor_final = calculateFinalValue(gasolinePrice);
 				
@@ -139,14 +154,6 @@ public class Principal extends Activity {
 
 	}
 
-	private OnClickListener clearHandler() {
-		return new View.OnClickListener() {
-
-			public void onClick(View v) {
-				gasolinePriceText.setText(null);
-				etanolPriceText.setText(null);
-			}
-		};
-	}
 
 }
+

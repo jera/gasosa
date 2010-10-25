@@ -4,6 +4,6 @@
     <string name="result">O preço do Álcool atingiu %.0f%%\ndo preço da Gasolina.</string>
     <string name="desc_app">Qual ta valendo abastecer? </string>
     <string name="app_name">Gasosa</string>
-    <string name="etanol.required">Eu preciso saber o preço do Álcool :)</string>
-    <string name="gasoline.required">Eu preciso saber o preço do Álcool :)</string>
+    <string name="etanol.required">Eu preciso saber o preço do Etanol :)</string>
+    <string name="gasoline.required">Eu preciso saber o preço da Gasolina :)</string>
 </resources>
