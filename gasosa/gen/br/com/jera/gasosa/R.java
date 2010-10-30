@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.alcoolxgasolina;
+package br.com.jera.gasosa;
 
 public final class R {
     public static final class anim {
@@ -27,9 +27,9 @@ public final class R {
     }
     public static final class id {
         public static final int alcool_price=0x7f070000;
+        public static final int calcButton=0x7f070002;
         public static final int gasolina_price=0x7f070001;
         public static final int link=0x7f070006;
-        public static final int primeiroBotao=0x7f070002;
         public static final int resultEtanol=0x7f070004;
         public static final int resultGas=0x7f070005;
         public static final int resultImage=0x7f070003;
