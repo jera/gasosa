@@ -51,7 +51,7 @@ public class Principal extends Activity {
 		gasolinePriceText = (EditText) findViewById(R.id.gasolina_price);
 		etanolPriceText = (EditText) findViewById(R.id.alcool_price);
 		resultGas = (TextView) findViewById(R.id.resultGas);
-		resultEtanol = (TextView) findViewById(R.id.resultEtanol);
+		resultEtanol = (TextView) findViewById(R.id.resultEthanol);
 		link = (ImageView) findViewById(R.id.link);
 		calcButton.setOnClickListener(this.calc);
 		link.setOnClickListener(this.openLink());
@@ -96,7 +96,7 @@ public class Principal extends Activity {
 					showResult(R.drawable.gas,resultGas,resultEtanol);
 				}
 				else{
-					showResult(R.drawable.etanol,resultEtanol,resultGas);
+					showResult(R.drawable.ethanol,resultEtanol,resultGas);
 				}
 				
 				//oculta o teclado virtual do android

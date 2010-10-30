@@ -18,7 +18,7 @@ public final class R {
         public static final int buttonbg=0x7f020001;
         public static final int buttonbg2=0x7f020002;
         public static final int calc_button=0x7f020003;
-        public static final int etanol=0x7f020004;
+        public static final int ethanol=0x7f020004;
         public static final int gas=0x7f020005;
         public static final int icon=0x7f020006;
         public static final int logo=0x7f020007;
@@ -30,7 +30,7 @@ public final class R {
         public static final int calcButton=0x7f070002;
         public static final int gasolina_price=0x7f070001;
         public static final int link=0x7f070006;
-        public static final int resultEtanol=0x7f070004;
+        public static final int resultEthanol=0x7f070004;
         public static final int resultGas=0x7f070005;
         public static final int resultImage=0x7f070003;
     }
@@ -50,15 +50,15 @@ public final class R {
         public static final int buttonCalc=0x7f06000b;
         public static final int buttonClear=0x7f06000c;
         public static final int hArea=0x7f060002;
-        public static final int inputEtanol=0x7f060004;
+        public static final int inputEthanol=0x7f060004;
         public static final int inputGas=0x7f060005;
         public static final int inputText=0x7f060003;
         public static final int label=0x7f060006;
-        public static final int labelEtanol=0x7f060007;
+        public static final int labelEthanol=0x7f060007;
         public static final int labelGas=0x7f060008;
         public static final int mainArea=0x7f060000;
         public static final int msgArea=0x7f060009;
-        public static final int resultEtanol=0x7f060010;
+        public static final int resultEthanol=0x7f060010;
         public static final int resultGas=0x7f06000f;
         public static final int resultImage=0x7f06000d;
         public static final int resultText=0x7f06000e;

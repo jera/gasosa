@@ -16,7 +16,7 @@
 				android:inputType="numberDecimal"
 				android:hint="0.00"
 				android:id="@+id/alcool_price"
-				style="@style/inputEtanol"/>
+				style="@style/inputEthanol"/>
 		
 			<EditText
 				android:inputType="numberDecimal"
@@ -41,8 +41,8 @@
 				style="@style/resultImage"/>
 			
 			<TextView
-				android:id="@+id/resultEtanol"
-				style="@style/resultEtanol"
+				android:id="@+id/resultEthanol"
+				style="@style/resultEthanol"
 				android:text="@string/result" />
 				
 			<TextView

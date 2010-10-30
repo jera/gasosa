@@ -32,7 +32,7 @@
 		<item name="android:drawableLeft">@drawable/valor</item>
 	</style>
 	
-	<style name="inputEtanol" parent="inputText">
+	<style name="inputEthanol" parent="inputText">
 		<item name="android:layout_marginLeft">20dp</item>
 	</style>
 	
@@ -50,7 +50,7 @@
 		<item name="android:textSize">24sp</item>
 	</style>
 	
-	<style name="labelEtanol" parent="label" >
+	<style name="labelEthanol" parent="label" >
 		<item name="android:layout_marginLeft">40dp</item>
 	</style>
 	
@@ -105,7 +105,7 @@
 		<item name="android:layout_marginLeft">33dp</item>
 	</style>
 	
-	<style name="resultEtanol" parent="resultText">
+	<style name="resultEthanol" parent="resultText">
 		<item name="android:layout_marginLeft">102dp</item>
 	</style>
 
