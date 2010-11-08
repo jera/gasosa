@@ -8,23 +8,23 @@
 			xmlns:android="http://schemas.android.com/apk/res/android"
 			style="@style/topArea">
 			
-		<LinearLayout
-			xmlns:android="http://schemas.android.com/apk/res/android"
-			style="@style/hArea">
-		
-			<EditText
-				android:inputType="numberDecimal"
-				android:hint="0.00"
-				android:id="@+id/alcool_price"
-				style="@style/inputEthanol"/>
-		
-			<EditText
-				android:inputType="numberDecimal"
-				android:hint="0.00"
-				android:id="@+id/gasolina_price"
-				style="@style/inputGas"/>
-		
-		</LinearLayout>
+			<LinearLayout
+				xmlns:android="http://schemas.android.com/apk/res/android"
+				style="@style/hArea">
+			
+				<EditText
+					android:inputType="numberDecimal"
+					android:hint="0.00"
+					android:id="@+id/alcool_price"
+					style="@style/inputEthanol"/>
+			
+				<EditText
+					android:inputType="numberDecimal"
+					android:hint="0.00"
+					android:id="@+id/gasolina_price"
+					style="@style/inputGas"/>
+			
+			</LinearLayout>
 		 
 			<Button 
 				android:id="@+id/calcButton"
