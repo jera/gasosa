@@ -43,6 +43,18 @@ public class Principal extends Activity {
 		
 		calculator = new Calculator();
 		
+		retrieveReferences();
+		
+		/*
+		 *  o operador this.new faz com que a inner class seja associada
+		 *  à essa mesma instância da outer class (Principal) ao invés
+		 *  de criar uma instância nova
+		 */
+		calcButton.setOnClickListener(this.new CalcHandler());
+		link.setOnClickListener(this.new OpenLink());
+	}
+
+	private void retrieveReferences() {
 		resultImage = (ImageView) findViewById(R.id.resultImage);
 		
 		calcButton = (Button) findViewById(R.id.calcButton);
@@ -57,14 +69,6 @@ public class Principal extends Activity {
 		fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade);
 		
 		format = getResources().getString(R.string.result);
-		
-		/*
-		 *  o operador this.new faz com que a inner class seja associada
-		 *  à essa mesma instância da outer class (Principal) ao invés
-		 *  de criar uma instância nova
-		 */
-		calcButton.setOnClickListener(this.new CalcHandler());
-		link.setOnClickListener(this.new OpenLink());
 	}
 	
 	
