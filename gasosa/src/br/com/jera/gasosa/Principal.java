@@ -27,15 +27,9 @@ public class Principal extends Activity {
 	
 	private Button calcButton;
 
-	private final OnClickListener calc;
-	
 	private InputMethodManager imm;
 	private Calculator calculator;
 	
-
-	{
-		calc = calcHandler();
-	}
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -53,27 +47,26 @@ public class Principal extends Activity {
 		resultGas = (TextView) findViewById(R.id.resultGas);
 		resultEtanol = (TextView) findViewById(R.id.resultEthanol);
 		link = (ImageView) findViewById(R.id.link);
-		calcButton.setOnClickListener(this.calc);
-		link.setOnClickListener(this.openLink());
-
+		
+		/*
+		 *  o operador this.new faz com que a inner class seja associada
+		 *  à essa mesma instância da outer class (Principal)
+		 */
+		calcButton.setOnClickListener(this.new CalcHandler());
+		link.setOnClickListener(this.new OpenLink());
 	}
 	
 	
-	private OnClickListener openLink(){
-		return new OnClickListener() {
-			
+	private class OpenLink implements OnClickListener{
 			public void onClick(View v) {
 				Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("http://www.m.jera.com.br") );
 				startActivity(intent);
 				
 			}
-		};
 	}
 	
 	
-	private OnClickListener calcHandler() {
-
-		return new OnClickListener() {
+	private class CalcHandler implements OnClickListener {
 
 			public void onClick(View view) {
 				
@@ -100,11 +93,9 @@ public class Principal extends Activity {
 				}
 				
 				//oculta o teclado virtual do android
-				imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+				imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 				imm.hideSoftInputFromWindow(calcButton.getWindowToken(), 0);
-
 			}
-		};
 
 	}
 	
