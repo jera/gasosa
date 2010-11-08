@@ -1,7 +1,5 @@
 package br.com.jera.gasosa;
 
-import android.text.TextUtils;
-
 public class Calculator {
 
 	private double gasolinePrice;
