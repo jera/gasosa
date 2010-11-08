@@ -22,8 +22,11 @@ public final class R {
         public static final int gas=0x7f020005;
         public static final int icon=0x7f020006;
         public static final int logo=0x7f020007;
-        public static final int top=0x7f020008;
-        public static final int valor=0x7f020009;
+        public static final int logo_focused=0x7f020008;
+        public static final int logo_pressed=0x7f020009;
+        public static final int logo_unfocused=0x7f02000a;
+        public static final int top=0x7f02000b;
+        public static final int valor=0x7f02000c;
     }
     public static final class id {
         public static final int alcool_price=0x7f070000;
