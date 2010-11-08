@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -30,6 +31,9 @@ public class Principal extends Activity {
 	private InputMethodManager imm;
 	private Calculator calculator;
 	
+	private Animation fadeAnimation; 
+	
+	String format;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -48,9 +52,16 @@ public class Principal extends Activity {
 		resultEtanol = (TextView) findViewById(R.id.resultEthanol);
 		link = (ImageView) findViewById(R.id.link);
 		
+		imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+		
+		fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade);
+		
+		format = getResources().getString(R.string.result);
+		
 		/*
 		 *  o operador this.new faz com que a inner class seja associada
-		 *  à essa mesma instância da outer class (Principal)
+		 *  à essa mesma instância da outer class (Principal) ao invés
+		 *  de criar uma instância nova
 		 */
 		calcButton.setOnClickListener(this.new CalcHandler());
 		link.setOnClickListener(this.new OpenLink());
@@ -93,23 +104,20 @@ public class Principal extends Activity {
 				}
 				
 				//oculta o teclado virtual do android
-				imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 				imm.hideSoftInputFromWindow(calcButton.getWindowToken(), 0);
 			}
 
 	}
 	
 	private void showResult(int imageId, TextView show, TextView hide  ){
-		
-		resultImage.setImageDrawable(getResources().getDrawable(imageId));
+		resultImage.setImageResource(imageId);
 		show.setVisibility(View.VISIBLE);
 		hide.setVisibility(View.INVISIBLE);
 		
-		String format = getResources().getString(R.string.result);
 		show.setText(String.format(format, calculator.ratio() ));
-		show.startAnimation(AnimationUtils.loadAnimation( Principal.this, R.anim.fade ));
+		show.startAnimation(fadeAnimation);
 		
-		resultImage.startAnimation(AnimationUtils.loadAnimation( Principal.this, R.anim.fade ));
+		resultImage.startAnimation(fadeAnimation);
 		resultImage.setVisibility(View.VISIBLE);
 	}
 
