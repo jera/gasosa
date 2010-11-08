@@ -25,14 +25,6 @@ public class Calculator {
 
 	}
 
-	public Calculator(double gasolinePrice, double ethanolPrice) {
-		this.ethanolPrice = ethanolPrice;
-		this.gasolinePrice = gasolinePrice;
-	}
-
-	public Calculator() {
-	}
-
 	public Fuel evaluatePrice() {
 
 		double finalValue = gasolinePrice / 100 * FACTOR;
