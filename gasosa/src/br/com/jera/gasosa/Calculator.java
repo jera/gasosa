@@ -37,31 +37,21 @@ public class Calculator {
 	 public double ratio(){
 		 return (ethanolPrice/gasolinePrice)*100;
 	 }
-	public void setGasolinePriceFromText(String text) {
 
-		if (TextUtils.isEmpty(text)) {
-			this.gasolinePrice = 0;
-		} else {
-			try {
-				this.gasolinePrice = Double.parseDouble(text);
-			} catch (NumberFormatException e) {
-				this.gasolinePrice = 0;
-			}
-		}
+	public void setGasolinePriceFromText(String text) {
+		this.gasolinePrice = parsePrice(text);
 	}
 
 	public void setEthanolPriceFromText(String text) {
+		this.ethanolPrice = parsePrice(text);
+	}
 
-		if (TextUtils.isEmpty(text)) {
-			this.ethanolPrice = 0;
-		} else {
-			try {
-				this.ethanolPrice = Double.parseDouble(text);
-			} catch (NumberFormatException e) {
-				this.ethanolPrice = 0;
-			}
+	private double parsePrice(String text) {
+		try {
+			return Double.parseDouble(text);
+		} catch (NumberFormatException e) {
+			return 0;
 		}
-
 	}
 
 	public double getGasolinePrice() {
