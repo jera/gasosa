@@ -32,9 +32,10 @@ public class Calculator {
 			return Fuel.ETHANOL;
 		}
 	}
-	 public double ratio(){
-		 return (ethanolPrice/gasolinePrice)*100;
-	 }
+
+	public double ratio() {
+		return (ethanolPrice / gasolinePrice) * 100;
+	}
 
 	public void setGasolinePriceFromText(String text) {
 		this.gasolinePrice = parsePrice(text);

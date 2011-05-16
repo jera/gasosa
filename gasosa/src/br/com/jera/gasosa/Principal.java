@@ -1,10 +1,7 @@
 package br.com.jera.gasosa;
 
-import br.com.jera.gasosa.Calculator.Fuel;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,6 +13,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import br.com.jera.gasosa.Calculator.Fuel;
+
+import com.google.ads.AdRequest;
+import com.google.ads.AdView;
 
 public class Principal extends Activity {
 	
@@ -24,7 +25,6 @@ public class Principal extends Activity {
 	private ImageView resultImage;
 	private TextView resultGas;
 	private TextView resultEtanol;
-	private ImageView link;
 	
 	private Button calcButton;
 
@@ -41,8 +41,9 @@ public class Principal extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		
+		AdView adView = (AdView) this.findViewById(R.id.adView);
+		adView.loadAd(new AdRequest());
 		calculator = new Calculator();
-		
 		retrieveReferences();
 		
 		/*
@@ -51,7 +52,6 @@ public class Principal extends Activity {
 		 *  de criar uma instância nova
 		 */
 		calcButton.setOnClickListener(this.new CalcHandler());
-		link.setOnClickListener(this.new OpenLink());
 	}
 
 	private void retrieveReferences() {
@@ -62,22 +62,12 @@ public class Principal extends Activity {
 		etanolPriceText = (EditText) findViewById(R.id.alcool_price);
 		resultGas = (TextView) findViewById(R.id.resultGas);
 		resultEtanol = (TextView) findViewById(R.id.resultEthanol);
-		link = (ImageView) findViewById(R.id.link);
 		
 		imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 		
 		fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade);
 		
 		format = getResources().getString(R.string.result);
-	}
-	
-	
-	private class OpenLink implements OnClickListener{
-			public void onClick(View v) {
-				Intent intent = new Intent("android.intent.action.VIEW", Uri.parse("http://www.m.jera.com.br") );
-				startActivity(intent);
-				
-			}
 	}
 	
 	
