@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/config" android:icon="@android:drawable/ic_menu_preferences"
+		android:title="Configurar" />
+	<item android:id="@+id/principal" android:icon="@android:drawable/ic_menu_edit"
+		android:title="Calcular" />
+	<item android:id="@+id/close" android:icon="@android:drawable/ic_menu_close_clear_cancel"
+		android:title="Sair" />
+</menu>

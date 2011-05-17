@@ -14,50 +14,59 @@
 		<item name="android:layout_height">wrap_content</item>
 		<item name="android:background">@drawable/top</item>
 	</style>
-	
+
+	<style name="topConfig">
+		<item name="android:orientation">vertical</item>
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+	</style>
+
+
 	<style name="hArea">
 		<item name="android:orientation">horizontal</item>
 		<item name="android:layout_width">wrap_content</item>
 		<item name="android:layout_height">wrap_content</item>
 	</style>
-	
+
 	<style name="inputText">
 		<item name="android:width">130dip</item>
 		<item name="android:layout_width">fill_parent</item>
 		<item name="android:layout_height">46dp</item>
-		<item name="android:layout_marginTop">85dp</item>
 		<item name="android:focusable">true</item>
 		<item name="android:paddingLeft">0dp</item>
+	</style>
+
+	<style name="valueText" parent="inputText">
 		<item name="android:drawablePadding">2dp</item>
 		<item name="android:drawableLeft">@drawable/valor</item>
+<item name="android:layout_marginTop">85dp</item>		
 	</style>
-	
-	<style name="inputEthanol" parent="inputText">
+
+	<style name="inputEthanol" parent="valueText">
 		<item name="android:layout_marginLeft">20dp</item>
 	</style>
-	
-	<style name="inputGas" parent="inputText">
+
+	<style name="inputGas" parent="valueText">
 		<item name="android:layout_marginLeft">20dp</item>
 	</style>
-	
 
 	<style name="label">
-	<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_width">fill_parent</item>
 		<item name="android:layout_height">fill_parent</item>
 		<item name="android:layout_marginTop">40dp</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:textColor">#FFFFFF</item>
 		<item name="android:textSize">24sp</item>
 	</style>
-	
-	<style name="labelEthanol" parent="label" >
+
+	<style name="labelEthanol" parent="label">
 		<item name="android:layout_marginLeft">40dp</item>
 	</style>
-	
-	<style name="labelGas"  parent="label">
+
+	<style name="labelGas" parent="label">
 		<item name="android:layout_marginLeft">80dp</item>
 	</style>
-	
+
 	<style name="msgArea">
 		<item name="android:layout_width">wrap_content</item>
 		<item name="android:layout_height">wrap_content</item>
@@ -91,7 +100,7 @@
 		<item name="android:layout_marginTop">13dp</item>
 		<item name="android:visibility">invisible</item>
 	</style>
-	
+
 	<style name="resultText">
 		<item name="android:layout_width">fill_parent</item>
 		<item name="android:layout_height">wrap_content</item>
@@ -100,11 +109,11 @@
 		<item name="android:textColor">#FFFFFF</item>
 		<item name="android:visibility">invisible</item>
 	</style>
-	
+
 	<style name="resultGas" parent="resultText">
 		<item name="android:layout_marginLeft">33dp</item>
 	</style>
-	
+
 	<style name="resultEthanol" parent="resultText">
 		<item name="android:layout_marginLeft">102dp</item>
 	</style>

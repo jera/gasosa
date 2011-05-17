@@ -2,10 +2,8 @@ package br.com.jera.gasosa;
 
 public class Calculator {
 
-	private double gasolinePrice;
+	private double gasPrice;
 	private double ethanolPrice;
-
-	private final static double FACTOR = 70;
 
 	public enum Fuel {
 
@@ -23,10 +21,13 @@ public class Calculator {
 
 	}
 
-	public Fuel evaluatePrice() {
-
-		double finalValue = gasolinePrice / 100 * FACTOR;
-		if (finalValue <= ethanolPrice) {
+	public Fuel evaluatePrice(float ethanolKm, float ethanolLiters, float gasKm, float gasLiters) {
+		double ethanolKmL = ethanolKm / ethanolLiters;
+		double gasKmL = gasKm / gasLiters;
+		double ratio1 = gasKmL / ethanolKmL;
+		double ratio2 = gasLiters * gasPrice / (ethanolLiters * ethanolPrice);
+		
+		if (ratio1 >= ratio2) {
 			return Fuel.GASOLINE;
 		} else {
 			return Fuel.ETHANOL;
@@ -34,11 +35,11 @@ public class Calculator {
 	}
 
 	public double ratio() {
-		return (ethanolPrice / gasolinePrice) * 100;
+		return (ethanolPrice / gasPrice) * 100;
 	}
 
 	public void setGasolinePriceFromText(String text) {
-		this.gasolinePrice = parsePrice(text);
+		this.gasPrice = parsePrice(text);
 	}
 
 	public void setEthanolPriceFromText(String text) {
@@ -54,7 +55,7 @@ public class Calculator {
 	}
 
 	public double getGasolinePrice() {
-		return gasolinePrice;
+		return gasPrice;
 	}
 
 	public double getEthanolPrice() {

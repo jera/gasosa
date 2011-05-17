@@ -55,16 +55,26 @@ containing a value of this type.
         public static final int IAB_BANNER=0x7f050002;
         public static final int IAB_LEADERBOARD=0x7f050003;
         public static final int IAB_MRECT=0x7f050001;
-        public static final int adView=0x7f05000a;
-        public static final int alcool_price=0x7f050004;
-        public static final int calcButton=0x7f050006;
-        public static final int gasolina_price=0x7f050005;
-        public static final int resultEthanol=0x7f050008;
-        public static final int resultGas=0x7f050009;
-        public static final int resultImage=0x7f050007;
+        public static final int adView=0x7f05000f;
+        public static final int alcool_price=0x7f050009;
+        public static final int calcButton=0x7f05000b;
+        public static final int close=0x7f050012;
+        public static final int config=0x7f050010;
+        public static final int ethanol_km=0x7f050004;
+        public static final int ethanol_liters=0x7f050005;
+        public static final int gas_km=0x7f050006;
+        public static final int gas_liters=0x7f050007;
+        public static final int gasolina_price=0x7f05000a;
+        public static final int principal=0x7f050011;
+        public static final int resultEthanol=0x7f05000d;
+        public static final int resultGas=0x7f05000e;
+        public static final int resultImage=0x7f05000c;
+        public static final int saveButton=0x7f050008;
     }
     public static final class layout {
-        public static final int main=0x7f030000;
+        public static final int config=0x7f030000;
+        public static final int main=0x7f030001;
+        public static final int menu=0x7f030002;
     }
     public static final class string {
         public static final int app_name=0x7f060003;
@@ -75,23 +85,25 @@ containing a value of this type.
         public static final int result=0x7f060001;
     }
     public static final class style {
-        public static final int button=0x7f07000a;
-        public static final int buttonCalc=0x7f07000b;
-        public static final int buttonClear=0x7f07000c;
-        public static final int hArea=0x7f070002;
-        public static final int inputEthanol=0x7f070004;
-        public static final int inputGas=0x7f070005;
-        public static final int inputText=0x7f070003;
-        public static final int label=0x7f070006;
-        public static final int labelEthanol=0x7f070007;
-        public static final int labelGas=0x7f070008;
+        public static final int button=0x7f07000c;
+        public static final int buttonCalc=0x7f07000d;
+        public static final int buttonClear=0x7f07000e;
+        public static final int hArea=0x7f070003;
+        public static final int inputEthanol=0x7f070006;
+        public static final int inputGas=0x7f070007;
+        public static final int inputText=0x7f070004;
+        public static final int label=0x7f070008;
+        public static final int labelEthanol=0x7f070009;
+        public static final int labelGas=0x7f07000a;
         public static final int mainArea=0x7f070000;
-        public static final int msgArea=0x7f070009;
-        public static final int resultEthanol=0x7f070010;
-        public static final int resultGas=0x7f07000f;
-        public static final int resultImage=0x7f07000d;
-        public static final int resultText=0x7f07000e;
+        public static final int msgArea=0x7f07000b;
+        public static final int resultEthanol=0x7f070012;
+        public static final int resultGas=0x7f070011;
+        public static final int resultImage=0x7f07000f;
+        public static final int resultText=0x7f070010;
         public static final int topArea=0x7f070001;
+        public static final int topConfig=0x7f070002;
+        public static final int valueText=0x7f070005;
     }
     public static final class styleable {
         /** Attributes that can be used with a com_google_ads_AdView.

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" android:background="@drawable/background">
+	<EditText android:inputType="numberDecimal" android:id="@+id/ethanol_km"
+		style="@style/inputText" />
+	<EditText android:inputType="numberDecimal" android:id="@+id/ethanol_liters"
+		style="@style/inputText" />
+	<EditText android:inputType="numberDecimal" android:id="@+id/gas_km"
+		style="@style/inputText" />
+	<EditText android:inputType="numberDecimal" android:id="@+id/gas_liters"
+		style="@style/inputText" />
+	<Button android:id="@+id/saveButton" style="@style/button"
+		android:background="@drawable/calc_button" />
+</LinearLayout>
