@@ -1,15 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent" android:background="@drawable/background">
-	<EditText android:inputType="numberDecimal" android:id="@+id/ethanol_km"
-		style="@style/inputText" />
-	<EditText android:inputType="numberDecimal" android:id="@+id/ethanol_liters"
-		style="@style/inputText" />
-	<EditText android:inputType="numberDecimal" android:id="@+id/gas_km"
-		style="@style/inputText" />
-	<EditText android:inputType="numberDecimal" android:id="@+id/gas_liters"
-		style="@style/inputText" />
-	<Button android:id="@+id/saveButton" style="@style/button"
-		android:background="@drawable/calc_button" />
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="#3E3E3E"
+	android:layout_gravity="center"
+	android:paddingTop="20dp"
+	android:gravity="center_vertical|top">
+	<TextView
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:text="Quantos quilômetros seu carro faz com etanol?"
+		android:id="@+id/textView1"
+		android:layout_width="wrap_content"
+		android:layout_marginLeft="15dp" />
+	<EditText
+		android:layout_height="wrap_content"
+		android:id="@+id/ethanol_km"
+		android:layout_width="fill_parent"
+		android:inputType="numberDecimal"
+		android:layout_margin="10dp" />
+	<TextView
+		android:layout_height="wrap_content"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:text="Quantos quilômetros seu carro faz com gasolina?"
+		android:id="@+id/textView2"
+		android:layout_width="wrap_content"
+		android:layout_marginLeft="15dp" />
+	<EditText
+		android:layout_height="wrap_content"
+		android:id="@+id/gas_km"
+		android:layout_width="fill_parent"
+		android:inputType="numberDecimal"
+		android:layout_margin="10dp" />
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:id="@+id/linearLayout1"
+		android:layout_width="fill_parent"
+		android:orientation="horizontal"
+		android:paddingRight="10dp"
+		android:gravity="right">
+		<Button
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:id="@+id/deafault_button"
+			android:text="Não sei, preencher depois"
+			android:layout_width="wrap_content" />
+		<Button
+			android:layout_height="wrap_content"
+			android:id="@+id/save_button"
+			android:text="Gravar"
+			android:layout_width="wrap_content" />
+	</LinearLayout>
+
 </LinearLayout>

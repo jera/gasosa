@@ -21,13 +21,12 @@ public class Calculator {
 
 	}
 
-	public Fuel evaluatePrice(float ethanolKm, float ethanolLiters, float gasKm, float gasLiters) {
-		double ethanolKmL = ethanolKm / ethanolLiters;
-		double gasKmL = gasKm / gasLiters;
-		double ratio1 = gasKmL / ethanolKmL;
-		double ratio2 = gasLiters * gasPrice / (ethanolLiters * ethanolPrice);
+	public Fuel evaluatePrice(float ethanolKm, float gasKm) {
+		double rc = gasKm/ethanolKm;
 		
-		if (ratio1 >= ratio2) {
+		gasPrice = rc * gasPrice;
+		
+		if (gasPrice <= ethanolPrice) {
 			return Fuel.GASOLINE;
 		} else {
 			return Fuel.ETHANOL;

@@ -36,17 +36,20 @@ public class Principal extends GasosaActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
 		SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
-		if (prefs.getFloat("ethanol_km", 0) == 0 || prefs.getFloat("ethanol_liters", 0) == 0 || prefs.getFloat("gas_km", 0) == 0
-				|| prefs.getFloat("gas_liters", 0) == 0) {
+		if (prefs.getBoolean("first_time", true)) {
+			SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, 0).edit();
+			editor.putBoolean("first_time", false);
+			editor.commit();
 			startActivity(new Intent(this, Config.class));
+		} else {
+			setContentView(R.layout.main);
+			AdView adView = (AdView) this.findViewById(R.id.adView);
+			adView.loadAd(new AdRequest());
+			calculator = new Calculator();
+			retrieveReferences();
+			calcButton.setOnClickListener(this.new CalcHandler());
 		}
-		AdView adView = (AdView) this.findViewById(R.id.adView);
-		adView.loadAd(new AdRequest());
-		calculator = new Calculator();
-		retrieveReferences();
-		calcButton.setOnClickListener(this.new CalcHandler());
 	}
 
 	private void retrieveReferences() {
@@ -74,8 +77,7 @@ public class Principal extends GasosaActivity {
 				Toast.makeText(getApplicationContext(), getResources().getString(R.string.gasoline_required), Toast.LENGTH_SHORT).show();
 				return;
 			}
-			Fuel fuel = calculator.evaluatePrice(prefs.getFloat("ethanol_km", 0), prefs.getFloat("ethanol_liters", 0), prefs.getFloat("gas_km", 0),
-					prefs.getFloat("gas_liters", 0));
+			Fuel fuel = calculator.evaluatePrice(prefs.getFloat("ethanol_km", 0), prefs.getFloat("gas_km", 0));
 			if (fuel.equals(Fuel.GASOLINE)) {
 				showResult(R.drawable.gas, resultGas, resultEtanol);
 			} else {

@@ -35,11 +35,16 @@
 		<item name="android:focusable">true</item>
 		<item name="android:paddingLeft">0dp</item>
 	</style>
+	
+		<style name="configInputText">
+		<item name="android:layout_width">fill_parent</item>
+		<item name="android:layout_height">46dp</item>
+	</style>
 
 	<style name="valueText" parent="inputText">
 		<item name="android:drawablePadding">2dp</item>
 		<item name="android:drawableLeft">@drawable/valor</item>
-<item name="android:layout_marginTop">85dp</item>		
+		<item name="android:layout_marginTop">85dp</item>		
 	</style>
 
 	<style name="inputEthanol" parent="valueText">
@@ -57,6 +62,11 @@
 		<item name="android:textStyle">bold</item>
 		<item name="android:textColor">#FFFFFF</item>
 		<item name="android:textSize">24sp</item>
+	</style>
+	
+	<style name="configLabel">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
 	</style>
 
 	<style name="labelEthanol" parent="label">
