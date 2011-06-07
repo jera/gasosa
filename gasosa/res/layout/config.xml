@@ -11,7 +11,7 @@
 	<TextView
 		android:layout_height="wrap_content"
 		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:text="Quantos quilômetros seu carro faz com etanol?"
+		android:text="@string/config.ethanol_km"
 		android:id="@+id/textView1"
 		android:layout_width="wrap_content"
 		android:layout_marginLeft="15dp" />
@@ -24,7 +24,7 @@
 	<TextView
 		android:layout_height="wrap_content"
 		android:textAppearance="?android:attr/textAppearanceMedium"
-		android:text="Quantos quilômetros seu carro faz com gasolina?"
+		android:text="@string/config.gas_km"
 		android:id="@+id/textView2"
 		android:layout_width="wrap_content"
 		android:layout_marginLeft="15dp" />

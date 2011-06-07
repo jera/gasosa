@@ -1,9 +1,16 @@
 package br.com.jera.gasosa;
 
+import android.content.SharedPreferences;
+
 public class Calculator {
 
-	private double gasPrice;
+	private double gasolinePrice;
 	private double ethanolPrice;
+	SharedPreferences prefs;
+	
+	public Calculator(SharedPreferences prefs) {
+		this.prefs = prefs;
+	}
 
 	public enum Fuel {
 
@@ -21,12 +28,15 @@ public class Calculator {
 
 	}
 
-	public Fuel evaluatePrice(float ethanolKm, float gasKm) {
-		double rc = gasKm/ethanolKm;
+	public Fuel evaluatePrice() {
+		float ethanolKm = prefs.getFloat("ethanol_km", 0);
+		float gasKm = prefs.getFloat("gas_km", 0);
+		boolean defaultPrefs = prefs.getBoolean("default_prefs", false);
 		
-		gasPrice = rc * gasPrice;
+		float factor = defaultPrefs ? 70 : ethanolKm/gasKm;
+		double finalValue = gasolinePrice / 100 * factor;
 		
-		if (gasPrice <= ethanolPrice) {
+		if (finalValue <= ethanolPrice) {
 			return Fuel.GASOLINE;
 		} else {
 			return Fuel.ETHANOL;
@@ -34,11 +44,11 @@ public class Calculator {
 	}
 
 	public double ratio() {
-		return (ethanolPrice / gasPrice) * 100;
+		return (ethanolPrice / gasolinePrice) * 100;
 	}
 
 	public void setGasolinePriceFromText(String text) {
-		this.gasPrice = parsePrice(text);
+		this.gasolinePrice = parsePrice(text);
 	}
 
 	public void setEthanolPriceFromText(String text) {
@@ -54,7 +64,7 @@ public class Calculator {
 	}
 
 	public double getGasolinePrice() {
-		return gasPrice;
+		return gasolinePrice;
 	}
 
 	public double getEthanolPrice() {

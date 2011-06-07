@@ -58,7 +58,6 @@ containing a value of this type.
         public static final int adView=0x7f050011;
         public static final int alcool_price=0x7f05000b;
         public static final int calcButton=0x7f05000d;
-        public static final int close=0x7f050014;
         public static final int config=0x7f050012;
         public static final int deafault_button=0x7f050009;
         public static final int ethanol_km=0x7f050005;
@@ -81,7 +80,10 @@ containing a value of this type.
     public static final class string {
         public static final int app_name=0x7f060003;
         public static final int buttonCalc=0x7f060000;
-        public static final int config_alert=0x7f060006;
+        public static final int config_alert=0x7f060007;
+        public static final int config_ethanol_km=0x7f060009;
+        public static final int config_gas_km=0x7f060008;
+        public static final int config_title=0x7f060006;
         public static final int desc_app=0x7f060002;
         public static final int etanol_required=0x7f060004;
         public static final int gasoline_required=0x7f060005;

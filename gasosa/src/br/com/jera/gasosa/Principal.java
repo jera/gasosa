@@ -46,7 +46,7 @@ public class Principal extends GasosaActivity {
 			setContentView(R.layout.main);
 			AdView adView = (AdView) this.findViewById(R.id.adView);
 			adView.loadAd(new AdRequest());
-			calculator = new Calculator();
+			calculator = new Calculator(getSharedPreferences(PREFS_NAME, 0));
 			retrieveReferences();
 			calcButton.setOnClickListener(this.new CalcHandler());
 		}
@@ -68,7 +68,6 @@ public class Principal extends GasosaActivity {
 		public void onClick(View view) {
 			calculator.setEthanolPriceFromText(etanolPriceText.getText().toString());
 			calculator.setGasolinePriceFromText(gasolinePriceText.getText().toString());
-			SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
 			if (calculator.getEthanolPrice() <= 0) {
 				Toast.makeText(getApplicationContext(), getResources().getString(R.string.etanol_required), Toast.LENGTH_SHORT).show();
 				return;
@@ -77,7 +76,7 @@ public class Principal extends GasosaActivity {
 				Toast.makeText(getApplicationContext(), getResources().getString(R.string.gasoline_required), Toast.LENGTH_SHORT).show();
 				return;
 			}
-			Fuel fuel = calculator.evaluatePrice(prefs.getFloat("ethanol_km", 0), prefs.getFloat("gas_km", 0));
+			Fuel fuel = calculator.evaluatePrice();
 			if (fuel.equals(Fuel.GASOLINE)) {
 				showResult(R.drawable.gas, resultGas, resultEtanol);
 			} else {

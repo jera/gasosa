@@ -2,8 +2,6 @@ package br.com.jera.gasosa;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -28,10 +26,6 @@ public class GasosaActivity extends Activity {
 		}
 		case R.id.principal: {
 			startActivity(new Intent(this, Principal.class));
-			return true;
-		}
-		case R.id.close: {
-			finish();
 			return true;
 		}
 		default:
