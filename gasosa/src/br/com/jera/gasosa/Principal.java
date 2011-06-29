@@ -1,5 +1,8 @@
 package br.com.jera.gasosa;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import br.com.jera.gasosa.Calculator.Fuel;
+import br.com.jeramobstats.JeraAgent;
 
 import com.google.ads.AdRequest;
 import com.google.ads.AdView;
@@ -52,6 +56,20 @@ public class Principal extends GasosaActivity {
 		}
 	}
 
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        JeraAgent.onStartSession(this, "QI4YUGV5K7FN7I42RPA1");
+    }
+
+    @Override
+    protected void onStop()
+    {
+        super.onStop();
+        JeraAgent.onEndSession(this);
+    }
+
 	private void retrieveReferences() {
 		resultImage = (ImageView) findViewById(R.id.resultImage);
 		calcButton = (Button) findViewById(R.id.calcButton);
@@ -76,6 +94,12 @@ public class Principal extends GasosaActivity {
 				Toast.makeText(getApplicationContext(), getResources().getString(R.string.gasoline_required), Toast.LENGTH_SHORT).show();
 				return;
 			}
+			
+			Map<String, String> parameters = new HashMap<String, String>();
+			parameters.put("GASOLINE_PRICE", String.valueOf(calculator.getGasolinePrice()));
+            parameters.put("ETHANOL_PRICE" , String.valueOf(calculator.getEthanolPrice()));
+			JeraAgent.logEvent("CALC_PRICE", parameters);
+			
 			Fuel fuel = calculator.evaluatePrice();
 			if (fuel.equals(Fuel.GASOLINE)) {
 				showResult(R.drawable.gas, resultGas, resultEtanol);

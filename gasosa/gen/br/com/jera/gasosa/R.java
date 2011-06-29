@@ -47,8 +47,9 @@ containing a value of this type.
         public static final int logo_focused=0x7f020009;
         public static final int logo_pressed=0x7f02000a;
         public static final int logo_unfocused=0x7f02000b;
-        public static final int top=0x7f02000c;
-        public static final int valor=0x7f02000d;
+        public static final int notification=0x7f02000c;
+        public static final int top=0x7f02000d;
+        public static final int valor=0x7f02000e;
     }
     public static final class id {
         public static final int BANNER=0x7f050000;

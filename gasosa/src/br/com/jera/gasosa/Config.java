@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import br.com.jeramobstats.JeraAgent;
 
 public class Config extends GasosaActivity {
 
@@ -62,6 +63,7 @@ public class Config extends GasosaActivity {
 			editor.putFloat("gas_km", Float.parseFloat(gasKm.getText().toString()));
 			editor.putBoolean("default_prefs", false);
 			editor.commit();
+            JeraAgent.logEvent("SAVED_PREFERENCES");
 			startActivity(new Intent(Config.this, Principal.class));
 		}
 	}

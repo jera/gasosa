@@ -17,9 +17,63 @@
 		<activity android:name="com.google.ads.AdActivity"
 			android:configChanges="keyboard|keyboardHidden|orientation" />
 
+ 		<!-- xtify configuration start -->
+		<activity android:name="com.xtify.android.sdk.SettingsActivity"
+			android:label="Settings">
+		</activity>
+		<activity android:name="com.xtify.android.sdk.NotificationDetailsActivity"
+			android:label="Notification Details" android:screenOrientation="portrait">
+		</activity>
+		<activity android:name="com.xtify.android.sdk.NotificationSettingsActivity"
+			android:label="Notification Settings">
+		</activity>
+		<service android:name="com.xtify.android.sdk.MainService"
+			android:label="Notifications Service">
+			<intent-filter>
+				<action android:name="com.xtify.android.sdk.IMainService" />
+				<category android:name="com.xtify.android.sdk.IMainService" />
+				<category android:name="com.xtify.android.sdk.IMainService.Vxxxx" />
+			</intent-filter>
+		</service>
+		<receiver android:name="com.xtify.android.sdk.MainReceiver">
+			<intent-filter>
+				<action android:name="com.xtify.android.sdk.SHOW_NOTIFICATION" />
+				<action android:name="com.xtify.android.sdk.NOTIFICATION_CLICKED" />
+				<action android:name="com.xtify.android.sdk.NOTIFICATION_CLEARED" />
+				<!-- MAKE SURE THE APP KEY ON THE NEXT LINE IS PRECEDED BY A SLASH -->
+				<data android:scheme="notif" android:host="notification.xtify.com"
+					android:pathPrefix="/cebadaff-aa54-4e08-a17b-85d99ca17b83" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+				<action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+				<action android:name="com.xtify.android.sdk.SEND_SETTINGS" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="android.intent.action.PACKAGE_ADDED" />
+				<action android:name="android.intent.action.PACKAGE_REMOVED" />
+				<data android:scheme="package" />
+			</intent-filter>
+		</receiver>
+		<meta-data android:name="XTIFY_SDK_API_KEY" android:value="cebadaff-aa54-4e08-a17b-85d99ca17b83" />
+		<receiver android:name="br.com.jera.gasosa.PushNotificationReceiver">
+			<intent-filter android:priority="9999">
+				<action android:name="com.xtify.android.sdk.SHOW_NOTIFICATION" />
+				<!-- KEEP THE FORWARD SLASH IN FRONT OF THE APP KEY ON THE LINE BELOW -->
+				<data	android:scheme="notif" 
+						android:host="notification.xtify.com"
+						android:pathPrefix="/cebadaff-aa54-4e08-a17b-85d99ca17b83" />
+			</intent-filter>
+		</receiver>
+        <!-- xtify configuration end -->
 	</application>
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	
 	<uses-sdk android:minSdkVersion="4" />
 
 </manifest> 
