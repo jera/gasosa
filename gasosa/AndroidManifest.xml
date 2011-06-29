@@ -42,7 +42,7 @@
 				<action android:name="com.xtify.android.sdk.NOTIFICATION_CLEARED" />
 				<!-- MAKE SURE THE APP KEY ON THE NEXT LINE IS PRECEDED BY A SLASH -->
 				<data android:scheme="notif" android:host="notification.xtify.com"
-					android:pathPrefix="/cebadaff-aa54-4e08-a17b-85d99ca17b83" />
+					android:pathPrefix="/15884105-904a-49a7-b676-eb320d271f62" />
 			</intent-filter>
 			<intent-filter>
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -55,14 +55,14 @@
 				<data android:scheme="package" />
 			</intent-filter>
 		</receiver>
-		<meta-data android:name="XTIFY_SDK_API_KEY" android:value="cebadaff-aa54-4e08-a17b-85d99ca17b83" />
+		<meta-data android:name="XTIFY_SDK_API_KEY" android:value="15884105-904a-49a7-b676-eb320d271f62" />
 		<receiver android:name="br.com.jera.gasosa.PushNotificationReceiver">
 			<intent-filter android:priority="9999">
 				<action android:name="com.xtify.android.sdk.SHOW_NOTIFICATION" />
 				<!-- KEEP THE FORWARD SLASH IN FRONT OF THE APP KEY ON THE LINE BELOW -->
 				<data	android:scheme="notif" 
 						android:host="notification.xtify.com"
-						android:pathPrefix="/cebadaff-aa54-4e08-a17b-85d99ca17b83" />
+						android:pathPrefix="/15884105-904a-49a7-b676-eb320d271f62" />
 			</intent-filter>
 		</receiver>
         <!-- xtify configuration end -->
