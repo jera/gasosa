@@ -40,43 +40,48 @@ containing a value of this type.
         public static final int buttonbg1=0x7f020002;
         public static final int buttonbg2=0x7f020003;
         public static final int calc_button=0x7f020004;
-        public static final int ethanol=0x7f020005;
-        public static final int gas=0x7f020006;
-        public static final int icon=0x7f020007;
-        public static final int logo=0x7f020008;
-        public static final int logo_focused=0x7f020009;
-        public static final int logo_pressed=0x7f02000a;
-        public static final int logo_unfocused=0x7f02000b;
-        public static final int notification=0x7f02000c;
-        public static final int top=0x7f02000d;
-        public static final int valor=0x7f02000e;
+        public static final int close=0x7f020005;
+        public static final int ethanol=0x7f020006;
+        public static final int gas=0x7f020007;
+        public static final int icon=0x7f020008;
+        public static final int logo=0x7f020009;
+        public static final int logo_focused=0x7f02000a;
+        public static final int logo_pressed=0x7f02000b;
+        public static final int logo_unfocused=0x7f02000c;
+        public static final int notification=0x7f02000d;
+        public static final int splash=0x7f02000e;
+        public static final int top=0x7f02000f;
+        public static final int valor=0x7f020010;
     }
     public static final class id {
         public static final int BANNER=0x7f050000;
         public static final int IAB_BANNER=0x7f050002;
         public static final int IAB_LEADERBOARD=0x7f050003;
         public static final int IAB_MRECT=0x7f050001;
-        public static final int adView=0x7f050011;
-        public static final int alcool_price=0x7f05000b;
-        public static final int calcButton=0x7f05000d;
-        public static final int config=0x7f050012;
+        public static final int adView=0x7f050013;
+        public static final int alcool_price=0x7f05000d;
+        public static final int calcButton=0x7f05000f;
+        public static final int close_splash=0x7f05000c;
+        public static final int config=0x7f050014;
         public static final int deafault_button=0x7f050009;
         public static final int ethanol_km=0x7f050005;
         public static final int gas_km=0x7f050007;
-        public static final int gasolina_price=0x7f05000c;
+        public static final int gasolina_price=0x7f05000e;
         public static final int linearLayout1=0x7f050008;
-        public static final int principal=0x7f050013;
-        public static final int resultEthanol=0x7f05000f;
-        public static final int resultGas=0x7f050010;
-        public static final int resultImage=0x7f05000e;
+        public static final int principal=0x7f050015;
+        public static final int resultEthanol=0x7f050011;
+        public static final int resultGas=0x7f050012;
+        public static final int resultImage=0x7f050010;
         public static final int save_button=0x7f05000a;
+        public static final int splash=0x7f05000b;
         public static final int textView1=0x7f050004;
         public static final int textView2=0x7f050006;
     }
     public static final class layout {
         public static final int config=0x7f030000;
-        public static final int main=0x7f030001;
-        public static final int menu=0x7f030002;
+        public static final int dynamic_splash=0x7f030001;
+        public static final int main=0x7f030002;
+        public static final int menu=0x7f030003;
     }
     public static final class string {
         public static final int app_name=0x7f060003;

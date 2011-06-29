@@ -48,6 +48,11 @@ public class Principal extends GasosaActivity {
 			startActivity(new Intent(this, Config.class));
 		} else {
 			setContentView(R.layout.main);
+			SplashDialog dialog = new SplashDialog(this);
+			if (!dialog.isSplashed()) {
+				dialog.show();
+				dialog.setSplashed(true);
+			}			
 			AdView adView = (AdView) this.findViewById(R.id.adView);
 			adView.loadAd(new AdRequest());
 			calculator = new Calculator(getSharedPreferences(PREFS_NAME, 0));
