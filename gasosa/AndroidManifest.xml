@@ -37,7 +37,7 @@
 			<intent-filter>
 				<action android:name="com.xtify.android.sdk.IMainService" />
 				<category android:name="com.xtify.android.sdk.IMainService" />
-				<category android:name="com.xtify.android.sdk.IMainService.Vxxxx" />
+				<category android:name="com.xtify.android.sdk.IMainService.V1050" />
 			</intent-filter>
 		</service>
 		<receiver android:name="com.xtify.android.sdk.MainReceiver">
@@ -74,6 +74,7 @@
 	</application>
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
