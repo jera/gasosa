@@ -7,7 +7,7 @@ public class Calculator {
 	private double gasolinePrice;
 	private double ethanolPrice;
 	SharedPreferences prefs;
-	
+
 	public Calculator(SharedPreferences prefs) {
 		this.prefs = prefs;
 	}
@@ -32,14 +32,23 @@ public class Calculator {
 		float ethanolKm = prefs.getFloat("ethanol_km", 0);
 		float gasKm = prefs.getFloat("gas_km", 0);
 		boolean defaultPrefs = prefs.getBoolean("default_prefs", false);
-		
-		float factor = defaultPrefs ? 70 : ethanolKm/gasKm;
-		double finalValue = gasolinePrice / 100 * factor;
-		
-		if (finalValue <= ethanolPrice) {
-			return Fuel.GASOLINE;
-		} else {
-			return Fuel.ETHANOL;
+
+		if (defaultPrefs || (gasKm <= 0 || ethanolKm <= 0)) {
+			double finalValue = gasolinePrice / 100 * 70;
+
+			if (finalValue <= ethanolPrice) {
+				return Fuel.GASOLINE;
+			} else {
+				return Fuel.ETHANOL;
+			}
+		}
+		else {
+			if(ethanolPrice/ethanolKm < gasolinePrice/gasKm) {
+				return Fuel.ETHANOL;
+			}
+			else{
+				return Fuel.GASOLINE;
+			}
 		}
 	}
 

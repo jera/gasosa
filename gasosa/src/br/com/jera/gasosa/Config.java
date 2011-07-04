@@ -31,6 +31,8 @@ public class Config extends GasosaActivity {
 		SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
 		ethanolKm.setText(String.valueOf(prefs.getFloat("ethanol_km", 0)));
 		gasKm.setText(String.valueOf(prefs.getFloat("gas_km", 0)));
+		ethanolKm.addTextChangedListener(new MoneyTextWatcher(ethanolKm));
+		gasKm.addTextChangedListener(new MoneyTextWatcher(gasKm));
 	}
 
 	private class SaveDefaultPrefs implements View.OnClickListener {

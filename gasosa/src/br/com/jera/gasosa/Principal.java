@@ -57,7 +57,10 @@ public class Principal extends GasosaActivity {
 			adView.loadAd(new AdRequest());
 			calculator = new Calculator(getSharedPreferences(PREFS_NAME, 0));
 			retrieveReferences();
+			gasolinePriceText.addTextChangedListener(new MoneyTextWatcher(gasolinePriceText));
+			etanolPriceText.addTextChangedListener(new MoneyTextWatcher(etanolPriceText));
 			calcButton.setOnClickListener(this.new CalcHandler());
+			
 		}
 	}
 
