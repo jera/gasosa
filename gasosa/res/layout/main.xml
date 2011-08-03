@@ -13,12 +13,12 @@
 			style="@style/hArea">
 			<EditText
 				android:inputType="numberDecimal"
-				android:text="0.00"
+				android:text="0.000"
 				android:id="@+id/alcool_price"
 				style="@style/inputEthanol" />
 			<EditText
 				android:inputType="numberDecimal"
-				android:text="0.00"
+				android:text="0.000"
 				android:id="@+id/gasolina_price"
 				style="@style/inputGas" />
 		</LinearLayout>

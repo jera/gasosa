@@ -1,7 +1,6 @@
 package br.com.jera.gasosa;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -13,40 +12,13 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import br.com.jeramobstats.JeraAgent;
 
-import com.xtify.android.sdk.PersistentLocationManager;
-
 public class GasosaActivity extends Activity {
 
 	public static final String PREFS_NAME = "br.com.jera.gasosa.Config";
 
-	private PersistentLocationManager persistentLocationManager;
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-		// xtify-specific code
-		Context context = this;
-		persistentLocationManager = new PersistentLocationManager(context);
-		Thread xtifyThread = new Thread(new Runnable() {
-			public void run() {
-				persistentLocationManager
-						.setNotificationIcon(R.drawable.notification);
-				persistentLocationManager
-						.setNotificationDetailsIcon(R.drawable.icon);
-				boolean trackLocation = persistentLocationManager
-						.isTrackingLocation();
-				boolean deliverNotifications = persistentLocationManager
-						.isDeliveringNotifications();
-				if (trackLocation || deliverNotifications) {
-					persistentLocationManager.startService();
-				}
-			}
-		});
-		xtifyThread.start(); // to avoid Android's application-not-responding
-								// dialog box,
-								// do non-essential work in another thread
-
 	}
 
 	@Override
@@ -100,32 +72,27 @@ public class GasosaActivity extends Activity {
 		}
 
 		@Override
-		public void beforeTextChanged(CharSequence s, int start, int count,
-				int after) {
+		public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 		}
 
 		@Override
-		public void onTextChanged(CharSequence s, int start, int before,
-				int count) {
+		public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-			if (!s.toString().matches(
-					"^(\\d{1,3}(\\,\\d{3})*|(\\d+))(\\.\\d{2})?$")) {
+			if (!s.toString().matches("^(\\d{1,3}(\\,\\d{3})*|(\\d+))(\\.\\d{3})?$")) {
 				String userInput = "" + s.toString().replaceAll("[^\\d]", "");
 				StringBuilder cashAmountBuilder = new StringBuilder(userInput);
 
-				while (cashAmountBuilder.length() > 3
-						&& cashAmountBuilder.charAt(0) == '0') {
+				while (cashAmountBuilder.length() >= 3 && cashAmountBuilder.charAt(0) == '0') {
 					cashAmountBuilder.deleteCharAt(0);
 				}
-				while (cashAmountBuilder.length() < 3) {
+				while (cashAmountBuilder.length() <= 3) {
 					cashAmountBuilder.insert(0, '0');
 				}
-				cashAmountBuilder.insert(cashAmountBuilder.length() - 2, '.');
+				cashAmountBuilder.insert(cashAmountBuilder.length() - 3, '.');
 
 				editText.setText(cashAmountBuilder.toString());
 				editText.setTextKeepState(cashAmountBuilder.toString());
-				Selection.setSelection(editText.getText(), cashAmountBuilder
-						.toString().length());
+				Selection.setSelection(editText.getText(), cashAmountBuilder.toString().length());
 			}
 		}
 	}

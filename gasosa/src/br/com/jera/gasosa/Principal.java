@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -40,43 +38,32 @@ public class Principal extends GasosaActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		SharedPreferences prefs = getSharedPreferences(PREFS_NAME, 0);
-		if (prefs.getBoolean("first_time", true)) {
-			SharedPreferences.Editor editor = getSharedPreferences(PREFS_NAME, 0).edit();
-			editor.putBoolean("first_time", false);
-			editor.commit();
-			startActivity(new Intent(this, Config.class));
-		} else {
-			setContentView(R.layout.main);
-			SplashDialog dialog = new SplashDialog(this);
-			if (!dialog.isSplashed()) {
-				dialog.show();
-				dialog.setSplashed(true);
-			}			
-			AdView adView = (AdView) this.findViewById(R.id.adView);
-			adView.loadAd(new AdRequest());
-			calculator = new Calculator(getSharedPreferences(PREFS_NAME, 0));
-			retrieveReferences();
-			gasolinePriceText.addTextChangedListener(new MoneyTextWatcher(gasolinePriceText));
-			etanolPriceText.addTextChangedListener(new MoneyTextWatcher(etanolPriceText));
-			calcButton.setOnClickListener(this.new CalcHandler());
-			
+		setContentView(R.layout.main);
+		SplashDialog dialog = new SplashDialog(this);
+		if (!dialog.isSplashed()) {
+			dialog.show();
+			dialog.setSplashed(true);
 		}
+		AdView adView = (AdView) this.findViewById(R.id.adView);
+		adView.loadAd(new AdRequest());
+		calculator = new Calculator(getSharedPreferences(PREFS_NAME, 0));
+		retrieveReferences();
+		gasolinePriceText.addTextChangedListener(new MoneyTextWatcher(gasolinePriceText));
+		etanolPriceText.addTextChangedListener(new MoneyTextWatcher(etanolPriceText));
+		calcButton.setOnClickListener(this.new CalcHandler());
 	}
 
-    @Override
-    protected void onStart()
-    {
-        super.onStart();
-        JeraAgent.onStartSession(this, "QI4YUGV5K7FN7I42RPA1");
-    }
+	@Override
+	protected void onStart() {
+		super.onStart();
+		JeraAgent.onStartSession(this, "QI4YUGV5K7FN7I42RPA1");
+	}
 
-    @Override
-    protected void onStop()
-    {
-        super.onStop();
-        JeraAgent.onEndSession(this);
-    }
+	@Override
+	protected void onStop() {
+		super.onStop();
+		JeraAgent.onEndSession(this);
+	}
 
 	private void retrieveReferences() {
 		resultImage = (ImageView) findViewById(R.id.resultImage);
@@ -102,12 +89,12 @@ public class Principal extends GasosaActivity {
 				Toast.makeText(getApplicationContext(), getResources().getString(R.string.gasoline_required), Toast.LENGTH_SHORT).show();
 				return;
 			}
-			
+
 			Map<String, String> parameters = new HashMap<String, String>();
 			parameters.put("GASOLINE_PRICE", String.valueOf(calculator.getGasolinePrice()));
-            parameters.put("ETHANOL_PRICE" , String.valueOf(calculator.getEthanolPrice()));
+			parameters.put("ETHANOL_PRICE", String.valueOf(calculator.getEthanolPrice()));
 			JeraAgent.logEvent("CALC_PRICE", parameters);
-			
+
 			Fuel fuel = calculator.evaluatePrice();
 			if (fuel.equals(Fuel.GASOLINE)) {
 				showResult(R.drawable.gas, resultGas, resultEtanol);
